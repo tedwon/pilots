@@ -1,0 +1,5 @@
+* 사용 순서
+1. run server.sh
+    hsqldb server를 시작합니다.
+2. run manager.sh
+    hsqldb manager gui를 실행합니다.

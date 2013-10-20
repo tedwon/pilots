@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
+
+    <!-- ============================== -->
+    <!-- Append messages to the console -->
+    <!-- ============================== -->
+
+     <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+         <param name="Target" value="System.out"/>
+         <param name="Threshold" value="INFO"/>
+         <layout class="org.apache.log4j.PatternLayout">
+	         <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] [%5p] [%c{1}] - %m%n"/>
+         </layout>
+     </appender>
+
+    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${logging.directory}/web.log"/>
+        <param name="Threshold" value="INFO"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+
+            <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] [%5p] [%c{1}.%M(%L)] - %m%n"/>
+
+            <!-- Fully Qualified Class Name
+               <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] [%5p] [%C.%M():%L] - %m%n"/>
+               -->
+
+            <!-- Class Name
+               <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] [%5p] [%c{1}.%M():%L] - %m%n"/>
+               -->
+
+            <!-- INFO Level
+               <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] [%5p] [%c{1}] - %m%n"/>
+               -->
+        </layout>
+    </appender>
+
+    <!-- ================ -->
+    <!-- Limit categories -->
+    <!-- ================ -->
+
+    <category name="com.skt.rapid.cep">
+        <priority value="DEBUG"/>
+    </category>
+
+    <category name="org.apache.commons.httpclient">
+        <priority value="INFO"/>
+    </category>
+
+    <category name="org.jbpm">
+        <priority value="INFO"/>
+    </category>
+
+    <category name="org.springframework">
+        <priority value="INFO"/>
+    </category>
+
+    <category name="com.mchange">
+        <priority value="INFO"/>
+    </category>
+
+    <!--
+     <category name="org.hibernate.impl.SessionImpl">
+         <priority value="INFO"/>
+     </category>
+
+     <category name="org.hibernate.engine.QueryParameters">
+         <priority value="INFO"/>
+     </category>
+
+     <category name="org.hibernate.engine.query.HQLQueryPlan">
+         <priority value="INFO"/>
+     </category>
+
+     <category name="org.hibernate.SQL">
+         <priority value="INFO"/>
+     </category>
+
+     <category name="org.hibernate.type">
+         <priority value="TRACE"/>
+     </category>
+     -->
+
+    <category name="org.hibernate">
+        <priority value="INFO"/>
+    </category>
+
+    <category name="org.quartz">
+        <priority value="INFO"/>
+    </category>
+
+    <category name="org.jboss.resteasy">
+        <priority value="INFO"/>
+    </category>
+
+    <category name="javax.ws.rs">
+        <priority value="INFO"/>
+    </category>
+
+    <!-- ======================= -->
+    <!-- Setup the Root category -->
+    <!-- ======================= -->
+
+    <root>
+        <appender-ref ref="CONSOLE"/>
+        <!--<appender-ref ref="FILE"/>-->
+    </root>
+</log4j:configuration>

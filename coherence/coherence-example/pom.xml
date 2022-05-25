@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.log4j>1.2.16</version.log4j>
         <coherence.home>d://</coherence.home>
-        <spring.version>3.0.5.RELEASE</spring.version>
+        <spring.version>5.2.22.RELEASE</spring.version>
         <spring-security.version>3.0.5.RELEASE</spring-security.version>
         <ehcache-core.version>2.4.2</ehcache-core.version>
     </properties>

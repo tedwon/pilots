@@ -10,7 +10,7 @@
 
 	<properties>
 		<java-version>1.5</java-version>
-		<springframework-version>3.0.5.RELEASE</springframework-version>
+		<springframework-version>5.2.21.RELEASE</springframework-version>
 		<springwebflow-version>2.3.0.BUILD-SNAPSHOT</springwebflow-version>
 		<springsecurity-version>3.0.3.RELEASE</springsecurity-version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
